@@ -10,7 +10,23 @@ Input: A sequence of n keys a1,...,an.
 Output: The permutation (reordering) of the input sequence such that a1 ≤ a2 ≤ ...≤ an−1 ≤ an.
 ```
 
-An instance of sorting might be an array of names, like {Mike, Bob, Sally, Jill,
-Jan}, or a list of numbers like {154, 245, 568, 324, 654, 324}. Determining that
-you are dealing with a general problem is your first step towards solving it.
-An
+An instance of sorting might be an array of names, like {Mike, Bob, Sally, Jill, Jan}, or a list of numbers like {154, 245, 568, 324, 654, 324}. Determining that you are dealing with a general problem is your first step towards solving it.
+
+
+An algorithm is a procedure that takes any of the possible input instances and transforms it to the desired output. There are many different algorithms for solving the problem of sorting. For example, insertion sort is a method for sorting that starts with a single element (thus forming a trivially sorted list) and then incrementally inserts the remaining elements so that the list stays sorted. This algorithm, implemented in C, is described below:
+
+
+```c++
+insertion_sort(item s[], int n)
+{
+  int i,j; /* counters */
+
+  for (i=1; i<n; i++) {
+    j=i;
+    while ((j>0) && (s[j] < s[j-1])) {
+      swap(&s[j],&s[j-1]);
+      j = j-1;
+    }
+  }
+}
+```
